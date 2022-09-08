@@ -1,0 +1,67 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.output {
+    background-color: white;
+    border-radius: u.rem(10);
+    margin-top: u.rem(24);
+    display: flex;
+    flex-direction: column;
+    padding: u.rem(16);
+
+    @include u.breakpoint-up(large) {
+        flex-direction: row;
+        align-items: center;
+        font-size: u.rem(18);
+        padding: u.rem(16) u.rem(33);
+    }
+
+    &__insert-url-container {
+
+        @include u.breakpoint-down(medium) {
+            border-bottom: 1px solid v.$gray;
+            width: calc(100% + u.rem(32));
+            transform: translateX(u.rem(-16));
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 65%;
+        }
+
+        &__insert-url {
+            color: v.$veryDarkBlue;
+
+            @include u.breakpoint-down(medium) {
+                padding-bottom: u.rem(10);
+                padding-left: u.rem(16);
+            }
+        }
+    }
+
+    &__shortened-url {
+        color: v.$cyan;
+
+        @include u.breakpoint-down(medium) {
+            padding-top: u.rem(10);
+            padding-bottom: u.rem(10);
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 25%;
+        }
+    }
+
+    button {
+        font-size: u.rem(16);
+        border-radius: u.rem(5);
+
+        &.copy {
+            background-color: v.$darkViolet;
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 10%;
+            padding: u.rem(8);
+        }
+    }
+}

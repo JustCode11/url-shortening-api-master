@@ -1,0 +1,65 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.top {
+    display: flex;
+    flex-direction: column;
+
+    @include u.breakpoint-down(medium) {
+        margin-bottom: u.rem(170);
+    }
+
+    @include u.breakpoint-up(large) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: u.rem(138);
+    }
+
+    &__left {
+        @include u.breakpoint-down(medium) {
+            order: 2;
+            text-align: center;
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 51%;
+        }
+
+        h1 {
+            @include u.breakpoint-down(medium) {
+                margin-bottom: u.rem(10);
+            }
+        }
+
+        p {
+            font-size: u.rem(18);
+            margin-bottom: u.rem(30);
+
+            @include u.breakpoint-up(large) {
+                width: 85%;
+            }
+        }
+    }
+
+    &__right {
+
+        @include u.breakpoint-down(medium) {
+            margin-bottom: u.rem(40);
+            order: 1;
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 40%;
+        }
+
+        img {
+            width: 150%;
+
+            @include u.breakpoint-up(large) {
+                position: relative;
+                left: u.rem(50);
+            }
+        }
+    }
+}

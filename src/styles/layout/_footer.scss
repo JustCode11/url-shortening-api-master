@@ -1,0 +1,105 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.footer {
+    background-color: v.$veryDarkViolet;
+    color: white;
+    text-align: center;
+    font-size: u.rem(16);
+    padding-top: u.rem(55);
+    padding-bottom: u.rem(55);
+
+    @include u.breakpoint-up(large) {
+        display: flex;
+        text-align: left;
+    }
+
+    &__logo {
+        @include u.breakpoint-down(medium) {
+            margin-bottom: u.rem(50);
+        }
+
+        @include u.breakpoint-up(large) {
+            width: 35%;
+        }
+
+        a {
+            svg path {
+                fill: white;
+                transition: fill 200ms ease-in-out;
+            }
+
+            &:hover svg path {
+                fill: v.$cyan;
+            }
+        }
+    }
+
+    &__links-container {
+        @include u.breakpoint-up(large) {
+            display: flex;
+            text-align: left;
+            width: 45%;
+            font-size: u.rem(14);
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+            white-space: no-wrap;
+
+            @include u.breakpoint-down(medium) {
+                margin-bottom: u.rem(40);
+            }
+
+            @include u.breakpoint-up(large) {
+                width: 33.33%;
+            }
+
+            p {
+                font-weight: 700;
+                margin-bottom: u.rem(10);
+            }
+
+            a {
+                transition: color 200ms ease-in-out;
+                margin-top: u.rem(5);
+                margin-bottom: u.rem(5);
+                color: v.$gray;
+
+                &:hover {
+                    color: v.$cyan;
+                }
+            }
+        }
+    }
+
+    &__social-links {
+        display: flex;
+        width: 100%;
+
+        @include u.breakpoint-up(large) {
+            width: 20%;
+            text-align: right;
+        }
+
+        &__link {
+            width: 25%;
+
+            &:nth-child(2) {
+                position: relative;
+                top: 2px;
+            }
+
+            a {
+                svg path {
+                    transition: fill 200ms ease-in-out;
+                }
+
+                &:hover svg path {
+                    fill: v.$cyan;
+                }
+            }
+        }
+    }
+}

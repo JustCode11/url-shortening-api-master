@@ -1,0 +1,37 @@
+@use '../utils' as u;
+
+$marginMobileSmall: 23;
+$marginMobileWide: 38;
+$marginMobileFooter: 103;
+
+$marginDesktop: 164;
+
+.containerSmall {
+    margin-left: u.rem($marginMobileSmall);
+    margin-right: u.rem($marginMobileSmall);
+
+    @include u.breakpoint-up(large) {
+        margin-left: u.rem($marginDesktop);
+        margin-right: u.rem($marginDesktop);
+    }
+}
+
+.containerWide {
+    margin-left: u.rem($marginMobileWide);
+    margin-right: u.rem($marginMobileWide);
+
+    @include u.breakpoint-up(large) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.containerFooter {
+    padding-left: u.rem($marginMobileFooter);
+    padding-right: u.rem($marginMobileFooter);
+
+    @include u.breakpoint-up(large) {
+        padding-left: u.rem($marginDesktop);
+        padding-right: u.rem($marginDesktop);
+    }
+}

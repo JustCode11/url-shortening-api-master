@@ -1,0 +1,33 @@
+@use './functions' as f;
+
+@keyframes drop-in {
+    from {
+        top: f.rem(-420);
+        visibility: hidden;
+    }
+
+    to {
+        top: f.rem(100);
+        visibility: visible;
+    }
+}
+
+.drop-in {
+    animation: drop-in 250ms ease-in-out forwards;
+}
+
+@keyframes pull-up {
+    from {
+        top: f.rem(100);
+        visibility: visible;
+    }
+
+    to {
+        top: f.rem(-420);
+        visibility: hidden;
+    }
+}
+
+.pull-up {
+    animation: pull-up 250ms ease-in-out forwards;
+}

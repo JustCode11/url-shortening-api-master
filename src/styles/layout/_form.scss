@@ -1,0 +1,74 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.form {
+    position: relative;
+    bottom: u.rem(82);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        background-color: v.$darkViolet;
+        background-image: url('../images/bg-shorten-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: u.rem(75) u.rem(-40);
+        border-radius: u.rem(10);
+        padding: u.rem(23);
+
+        @include u.breakpoint-up(large) {
+            flex-direction: row;
+            align-items: center;
+            padding: u.rem(52) u.rem(65);
+            background-image: url('../images/bg-shorten-desktop.svg');
+            background-position: u.rem(0);
+
+            &.warning {
+                align-items: flex-start;
+            }
+        }
+
+        &__input-container {
+            @include u.breakpoint-up(large) {
+                width: 80%;
+                margin-right: u.rem(24);
+            }
+
+            input {
+                width: 100%;
+                outline: none;
+                -webkit-appearance: none;
+                border: none;
+                font-family: v.$primaryFont;
+                padding: u.rem(14) u.rem(16);
+                border-radius: u.rem(5);
+                font-size: u.rem(16);
+
+                &.warning {
+                    border: 2px solid v.$red;
+                }
+            }
+
+            &__error-message {
+                color: v.$red;
+                font-size: u.rem(14);
+                font-style: italic;
+                //display: none;
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: u.rem(14) u.rem(16);
+            border-radius: u.rem(5);
+
+            @include u.breakpoint-down(medium) {
+                margin-top: u.rem(16);
+            }
+
+            @include u.breakpoint-up(large) {
+                width: 20%;
+            }
+        }
+    }
+}

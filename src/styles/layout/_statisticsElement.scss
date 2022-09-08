@@ -1,0 +1,103 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.statisticsElement {
+    background-color: white;
+    border-radius: u.rem(10);
+    text-align: center;
+    padding-left: u.rem(30);
+    padding-right: u.rem(30);
+    padding-bottom: u.rem(26);
+    position: relative;
+
+    @include u.breakpoint-up(large) {
+        text-align: left;
+        padding-left: u.rem(23);
+        padding-right: u.rem(23);
+    }
+
+    &:first-child {
+        @include u.breakpoint-up(large) {
+            bottom: u.rem(42);
+        }
+    }
+
+    &:last-child {
+        @include u.breakpoint-up(large) {
+            top: u.rem(42);
+        }
+    }
+
+    &:not(:last-child) {
+        @include u.breakpoint-down(medium) {
+            margin-bottom: u.rem(90);
+        }
+
+        @include u.breakpoint-up(large) {
+            margin-right: u.rem(28);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: v.$cyan;
+
+            @include u.breakpoint-down(medium) {
+                bottom: u.rem(-90);
+                left: calc(50% - u.rem(4));
+                width: u.rem(8);
+                height: u.rem(90);
+            }
+
+            @include u.breakpoint-up(large) {
+                height: u.rem(8);
+                width: u.rem(28);
+                bottom: calc((50% - u.rem(4)) - u.rem(20));
+                right: u.rem(-28);
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        &::before {
+            @include u.breakpoint-up(large) {
+                bottom: calc((50% - u.rem(4)) + u.rem(22));
+            }
+        }
+    }
+
+    &__img-container {
+        background-color: v.$darkViolet;
+        width: u.rem(88);
+        height: u.rem(88);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: relative;
+        transform: translateY(-50%);
+
+        @include u.breakpoint-down(medium) {
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        position: relative;
+        bottom: u.rem(15);
+
+        h3 {
+            margin-bottom: u.rem(15);
+        }
+
+        p {
+            font-size: u.rem(14);
+            line-height: u.rem(26);
+
+            @include u.breakpoint-up(large) {
+                font-size: u.rem(16);
+            }
+        }
+    }
+}

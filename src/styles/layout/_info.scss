@@ -1,0 +1,34 @@
+@use '../utils' as u;
+@use '../globals' as v;
+
+.info {
+    background-color: v.$darkViolet;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: u.rem(95);
+    padding-bottom: u.rem(87);
+    background-image: url('../images/bg-boost-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include u.breakpoint-up(large) {
+        background-image: url('../images/bg-boost-desktop.svg');
+        padding-top: u.rem(85);
+        padding-bottom: u.rem(50);
+    }
+
+    p {
+        font-size: u.rem(26);
+        font-weight: 700;
+        margin-bottom: u.rem(18);
+
+        @include u.breakpoint-up(large) {
+            font-size: u.rem(36);
+            margin-bottom: u.rem(25);
+        }
+    }
+}
