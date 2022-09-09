@@ -37,8 +37,8 @@ Mobile Desktop
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/urlshortening-app-created-with-react-sass-and-localstorage-EA8PjtUL7h](https://www.frontendmentor.io/solutions/urlshortening-app-created-with-react-sass-and-localstorage-EA8PjtUL7h)
+- Live Site URL: [https://justcode11.github.io/url-shortening-api-master/index.html](https://justcode11.github.io/url-shortening-api-master/index.html)
 
 ## Built with
 
