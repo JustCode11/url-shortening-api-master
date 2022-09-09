@@ -1,12 +1,15 @@
 {
   "name": "url-shortening-api-master-react-app",
   "version": "1.0.0",
+  "homepage": "https://justcode11.github.io/url-shortening-api-master/",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./index.html",
-    "build": "parcel build ./index.html"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "parcel ./public/index.html",
+    "build": "parcel build ./public/index.html"
   },
   "author": "Adrian Fonat",
   "license": "ISC",
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
     "buffer": "^6.0.3",
+    "gh-pages": "^4.0.0",
     "process": "^0.11.10",
     "sass": "^1.54.8"
   }
