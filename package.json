@@ -11,7 +11,7 @@
     "start": "parcel ./public/index.html",
     "build": "parcel build ./public/index.html --public-url ."
   },
-  "author": "Adrian Fonat",
+  "author": "JustCode11",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
